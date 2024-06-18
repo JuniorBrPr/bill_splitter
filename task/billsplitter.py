@@ -11,10 +11,10 @@ else:
     if option == "Yes":
         lucky = random.choice(list(friends.keys()))
         print(f"{lucky} is the lucky one!")
+        friends = {friend: round(bill / (number_of_friends - 1), 2) for friend in friends}
+        friends[lucky] = 0
     else:
         print("No one is going to be lucky")
-
-
-# for friend in friends:
-    #     friends[friend] = round(bill / number_of_friends, 2)
+        friends = {friend: round(bill / number_of_friends, 2) for friend in friends}
+    print(friends)
 
